@@ -19,6 +19,8 @@ const userData = {
   Pool: userPool,
 };
 
+const gGNToSearchBy = "4052852912419";
+
 var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
 cognitoUser.authenticateUser(authenticationDetails, {
   onSuccess: function (result) {
@@ -28,8 +30,7 @@ cognitoUser.authenticateUser(authenticationDetails, {
         {
           hostname: "api.ci.chain.agriplace.com",
           method: "GET",
-          path:
-            "/v2/partners/?is_archived=false&page=1&page_size=20&search=4052852912419&search_fields=partner__name%2Cpartner__ggn%2Cpartner__sedex%2Ccontacts__email",
+          path: `/v2/partners/?is_archived=false&page=1&page_size=20&search=${gGNToSearchBy}&search_fields=partner__name%2Cpartner__ggn%2Cpartner__sedex%2Ccontacts__email`,
           headers: {
             "accept-encoding": "gzip, deflate, br",
             accept: "application/json, text/plain, */*",
