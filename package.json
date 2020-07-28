@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "amazon-cognito-identity-js": "^3.2.2",
+    "aws-amplify": "^2.2.2",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0"
+  }
+}
